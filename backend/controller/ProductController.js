@@ -1,6 +1,6 @@
-const Product = require("../models/ProductModel");
 const ErrorHandler = require("../utils/ErrorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
+const Product = require("../models/ProductModel");
 const Features = require("../utils/Features");
 
 //create product
@@ -17,7 +17,7 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
 //GetAll Products
 exports.getAllProducts = catchAsyncErrors(async (req, res) => {
     const resultPerPage = 8;
-    const productCount = await Product.countDocuments();
+    // const productCount = await Product.countDocuments();
     const feature = new Features(Product.find(), req.query)
         .search()
         .filter()
@@ -191,4 +191,4 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
       success: true,
       message: "deleted successfully"
     });
-  });
+});
