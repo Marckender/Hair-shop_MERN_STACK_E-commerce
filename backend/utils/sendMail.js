@@ -1,6 +1,7 @@
 const nodeMailer = require("nodemailer");
 
 const sendMail = async (options) => {
+//to review
     const transporter = nodeMailer.createTransport({
       host: process.env.SMPT_HOST,
       port: process.env.SMPT_PORT,
